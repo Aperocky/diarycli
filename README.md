@@ -12,6 +12,8 @@ One CLI command to create and organize your diaries in the terminal.
 
 Use environment argument `DIARY_DIR` and `DIARY_EDITOR` to configure where the diary are and what editor to use, by default, it use `vim` as editor and `~/diary` as path for diary.
 
+You also may need to put `path/to/python/3.X/bin` in your `$PATH` for the CLI to work, depending on how your version of pip install executable packages.
+
 ### Demo
 
 ![demo](demo.gif)
