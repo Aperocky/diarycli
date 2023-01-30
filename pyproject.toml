@@ -1,0 +1,17 @@
+[project]
+name = "diarycli"
+version = "0.1.0"
+description = "A CLI program that help creates diary and organize them"
+readme = "README.md"
+license = {file = "LICENSE.txt"}
+keywords = ["diary", "cli", "vim"]
+authors = [
+  {name = "Rocky Li", email = "aperocky@gmail.com" }
+]
+
+[project.scripts]
+diary = "diarycli:main"
+
+[build-system]
+requires = ["setuptools>=43.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
