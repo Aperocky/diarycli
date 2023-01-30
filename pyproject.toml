@@ -1,6 +1,6 @@
 [project]
 name = "diarycli"
-version = "0.1.0"
+version = "0.2.0"
 description = "A CLI program that help creates diary and organize them"
 readme = "README.md"
 license = {file = "LICENSE.txt"}

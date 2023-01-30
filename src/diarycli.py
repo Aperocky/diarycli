@@ -1,6 +1,7 @@
 import os
 import sys
 import argparse
+from pathlib import Path
 from subprocess import call
 from datetime import date
 from datetime import datetime
@@ -9,7 +10,7 @@ from datetime import datetime
 DIARY_DIR = os.environ.get("DIARY_DIR")
 DIARY_EDITOR = os.environ.get("DIARY_EDITOR")
 if DIARY_DIR is None:
-    DIARY_DIR = "~/diary"
+    DIARY_DIR = os.path.join(Path.home(), "diary")
 if DIARY_EDITOR is None:
     DIARY_EDITOR = "vim"
 
