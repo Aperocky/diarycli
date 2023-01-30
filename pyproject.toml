@@ -9,6 +9,10 @@ authors = [
   {name = "Rocky Li", email = "aperocky@gmail.com" }
 ]
 
+[project.urls]
+"Homepage" = "https://github.com/Aperocky/diarycli"
+"Source" = "https://github.com/Aperocky/diarycli"
+
 [project.scripts]
 diary = "diarycli:main"
 

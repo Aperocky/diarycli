@@ -14,7 +14,7 @@ Use environment argument `DIARY_DIR` and `DIARY_EDITOR` to configure where the d
 
 ### Demo
 
-![demo](demo.mp4)
+![demo](demo.gif)
 
 ### Inspiration
 
