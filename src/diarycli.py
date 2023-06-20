@@ -14,12 +14,37 @@ if DIARY_DIR is None:
 if DIARY_EDITOR is None:
     DIARY_EDITOR = "vim"
 
+DIARY_TEMPLATE = """
+
+### What's working?
+
+
+
+### What are you worried about?
+
+
+
+### What's on the calendar for today?
+
+
+
+### What's the most important thing to finish today?
+
+
+"""
+
 
 def parse_date(date_str):
     try:
         return datetime.strptime(date_str, "%Y-%m-%d").date()
     except ValueError as e:
         raise SystemExit(e)
+#
+#
+# def read_template(template_file):
+#     with open(template_file, "r") as template:
+#         fp = template.read()
+#         return fp
 
 
 def edit_entry(target_date = None):
@@ -35,8 +60,10 @@ def edit_entry(target_date = None):
     if os.path.isfile(entry_path):
         entry_exist = True
     with open(entry_path, "a") as entry:
+        template_file = DIARY_TEMPLATE
         if not entry_exist:
             entry.write(datetime.strftime(target_date, "## %Y-%m-%d, %A"))
+            entry.write(template_file)
         entry.flush()
         call([DIARY_EDITOR, entry_path])
 
