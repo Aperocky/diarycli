@@ -14,6 +14,46 @@ if DIARY_DIR is None:
 if DIARY_EDITOR is None:
     DIARY_EDITOR = "vim"
 
+DIARY_TEMPLATE_ACCOUNTABILITY_PARTNER = """
+
+# PARTNER
+
+### How did the week go?
+
+
+
+### What are you worried about?
+
+
+
+### What are you committing to for the following week?
+
+
+
+### What's the most important thing to finish next week?
+
+
+
+# MYSELF 
+
+### How did the week go?
+
+
+
+### What are you worried about?
+
+
+
+### What are you committing to for the following week?
+
+
+
+### What's the most important thing to finish next week?
+
+
+
+"""
+
 DIARY_TEMPLATE = """
 
 ### What's working?
@@ -80,7 +120,7 @@ def cat_entry():
         print("Diary for today not created yet")
 
 
-def main():
+if __name__ == "__main__":
     args = sys.argv[1:]
     if not args:
         edit_entry()
@@ -88,7 +128,3 @@ def main():
         cat_entry()
     else:
        edit_entry(parse_date(args[0]))
-
-
-if __name__ == "__main__":
-    main()
