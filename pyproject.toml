@@ -1,17 +1,17 @@
 [project]
-name = "diarycli"
-version = "0.2.0"
+name = "diarycli-ng"
+version = "0.3.0"
 description = "A CLI program that help creates diary and organize them"
 readme = "README.md"
 license = {file = "LICENSE.txt"}
 keywords = ["diary", "cli", "vim"]
 authors = [
-  {name = "Rocky Li", email = "aperocky@gmail.com" }
+  {name = "Aaron Imbrock", email = "aaron@sizza.net" }
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/Aperocky/diarycli"
-"Source" = "https://github.com/Aperocky/diarycli"
+"Homepage" = "https://github.com/aaron-imbrock/diarycli-ng"
+"Source" = "https://github.com/aaron-imbrock/diarycli-ng"
 
 [project.scripts]
 diary = "diarycli:main"
