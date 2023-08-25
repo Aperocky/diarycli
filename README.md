@@ -1,6 +1,6 @@
 ## DiaryCLI
 
-`$ pip install diarycli`
+`$ pip3 install git+https://github.com/aaron-imbrock/diarycli.git`
 
 One CLI command to create and organize your diaries in the terminal.
 
@@ -31,7 +31,7 @@ export PATH=$PATH:/some/path/examples/bin
 
 ### Inspiration
 
-Inspiration from bash diary script that I have created and used for years: https://github.com/Aperocky/diaryman/blob/master/diaryman.sh
+Inspiration from Aperocky's very nice cli diary tool: [diarycli](https://github.com/Aperocky/diarycli)
 
 `pip` provides an easier way to package and distribute this software.
 
