@@ -5,69 +5,9 @@ import sys
 import argparse
 from pathlib import Path
 from subprocess import call
-from datetime import date
-from datetime import datetime
+from datetime import date, datetime
 
-
-DIARY_TEMPLATE_ACCOUNTABILITY_PARTNER = """
-
-# PARTNER
-
-### How did the week go?
-
-
-
-### What are you worried about?
-
-
-
-### What are you committing to for the following week?
-
-
-
-### What's the most important thing to finish next week?
-
-
-
-# MYSELF 
-
-### How did the week go?
-
-
-
-### What are you worried about?
-
-
-
-### What are you committing to for the following week?
-
-
-
-### What's the most important thing to finish next week?
-
-
-
-"""
-
-DIARY_TEMPLATE = """
-
-### What's working?
-
-
-
-### What are you worried about?
-
-
-
-### What's on the calendar for today?
-
-
-
-### What's the most important thing to finish today?
-
-
-"""
-
+from .templates import DIARY_TEMPLATE
 
 class DiaryEntry:
     def __init__(self, date, content):
@@ -75,20 +15,32 @@ class DiaryEntry:
         self.content = content
 
 class Diary:
-    def __init__(self, diary_dir=None, diary_editor=None):
+    def __init__(self, diary_dir=None, diary_editor=None, db_file=None):
         if diary_dir is None:
             diary_dir = os.path.join(Path.home(), "diary")
         if diary_editor is None:
             diary_editor = "vim"
+        if db_file is None:
+            db_file = "diary.db"
 
         self.DIARY_DIR = diary_dir
         self.DIARY_EDITOR = diary_editor
+        self.DB_FILE = db_file
+        self.commands = {}
 
     def parse_date(self, date_str):
         try:
             return datetime.strptime(date_str, "%Y-%m-%d").date()
         except ValueError as e:
             raise SystemExit(e)
+
+    def execute(self, command, *args):
+        if command in self.commands:
+            self.commands[command](*args)
+        else:
+            print(f"Unknown command: {command}")
+    
+
 
     def edit_entry(self, target_date=None):
         if not target_date:
